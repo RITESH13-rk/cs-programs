@@ -1,0 +1,49 @@
+#include <stdio.h>
+
+int main() {
+    int arr[10], i, n, key;
+    int beg, end, mid, loc;
+
+    printf("Program to implement Binary Search\n");
+    printf("==================================\n");
+
+    printf("Enter how many elements to store in array (max 10): ");
+    scanf("%d", &n);
+
+    if (n > 10 || n <= 0) {
+        printf("Invalid number of elements!\n");
+        return 1;
+    }
+
+    printf("Enter %d elements in sorted order:\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    printf("Enter key element to search: ");
+    scanf("%d", &key);
+
+    beg = 0;
+    end = n - 1;
+    loc = -1;  // -1 means not found
+
+    while (beg <= end) {
+        mid = (beg + end) / 2;
+
+        if (key == arr[mid]) {
+            loc = mid + 1; // location as 1-based index
+            break;
+        } else if (key < arr[mid]) {
+            end = mid - 1;
+        } else {
+            beg = mid + 1;
+        }
+    }
+
+    if (loc != -1)
+        printf("%d found at location %d\n", key, loc);
+    else
+        printf("%d is not found in the list\n", key);
+
+    return 0;
+}
