@@ -1,0 +1,55 @@
+using System;
+
+// Declare a delegate
+delegate void Operation(int a, int b);
+
+class Calculator
+{
+    public void Add(int x, int y)
+    {
+        Console.WriteLine("Addition: " + (x + y));
+    }
+
+    public void Subtract(int x, int y)
+    {
+        Console.WriteLine("Subtraction: " + (x - y));
+    }
+
+    public void Multiply(int x, int y)
+    {
+        Console.WriteLine("Multiplication: " + (x * y));
+    }
+
+    public void Divide(int x, int y)
+    {
+        if (y != 0)
+            Console.WriteLine("Division: " + ((float)x / y));
+        else
+            Console.WriteLine("Cannot divide by zero.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Calculator calc = new Calculator();
+
+        // Create delegate instances
+        Operation op;
+
+        Console.WriteLine("Using delegates to call Calculator methods:\n");
+
+        op = calc.Add;
+        op(20, 10);
+
+        op = calc.Subtract;
+        op(20, 10);
+
+        op = calc.Multiply;
+        op(20, 10);
+
+        op = calc.Divide;
+        op(20, 10);
+    }
+}
