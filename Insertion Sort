@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+void insertionsort(int arr[], int n);
+
+int main() {
+    int arr[10], n, i;
+
+    printf("Program to implement Insertion Sort\n");
+    printf("===================================\n");
+    printf("Enter the size of the array (max 10): ");
+    scanf("%d", &n);
+
+    if (n > 10 || n <= 0) {
+        printf("Invalid array size!\n");
+        return 1;
+    }
+
+    printf("Enter the array elements:\n");
+    for (i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+
+    printf("\nArray before sorting:\n");
+    for (i = 0; i < n; i++)
+        printf("%d\t", arr[i]);
+
+    insertionsort(arr, n);
+
+    printf("\nArray after sorting:\n");
+    for (i = 0; i < n; i++)
+        printf("%d\t", arr[i]);
+
+    printf("\n");
+    return 0;
+}
+
+void insertionsort(int a[], int n) {
+    int i, j, temp;
+    for (i = 1; i < n; i++) {
+        temp = a[i];
+        for (j = i - 1; j >= 0 && temp < a[j]; j--) {
+            a[j + 1] = a[j];
+        }
+        a[j + 1] = temp;
+    }
+}
