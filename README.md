@@ -1,7 +1,7 @@
-using System;
+      using System;
 
-class BubbleSortExample
-{
+        class BubbleSortExample
+     {
     static void Main()
     {
         int[] arr = { 45, 12, 78, 23, 56, 10 };
@@ -37,4 +37,4 @@ class BubbleSortExample
         }
         Console.WriteLine();
     }
-}
+    }
