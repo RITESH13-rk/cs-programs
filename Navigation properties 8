@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<head>
+    <title> show navigator properties in tabular format</title>
+    <style>
+        th, td, p, input {
+            font:14px cambria;
+        }
+        table, th, td 
+        {
+            border: solid 2px black;
+            border-collapse: collapse;
+            padding: 2px 3px;
+            text-align: center;
+            background-color: teal;
+            color: silver;
+            
+        }
+        th {
+            font-weight:bold;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+<center>
+<h1 style="color: green;">Navigator Properties</h1>
+
+    <table id="navTable">
+        <tr>
+            <th>Sl.No</th>
+                <th>Property Name</th>
+                    <th>Values</th>
+        </tr>
+        <tr>
+            <td>01</td>
+                <td>appCodeName</td>
+                    <td><script>document.writeln(navigator.appCodeName); </script></td>
+        </tr>
+        <tr>
+            <td>02</td>
+                <td>appName</td>
+                    <td><script>document.writeln(navigator.appName);  </script></td>
+        </tr>
+        <tr>
+            <td>03</td>
+                <td>appVersion</td>
+                    <td><script>document.writeln(navigator.appVersion);  </script></td>
+        </tr>
+        <tr>
+            <td>04</td>
+                <td>cookieEnabled</td>
+                    <td><script>document.writeln(navigator.cookieEnabled);  </script></td>
+        </tr>
+        <tr>
+            <td>05</td>
+                <td>language</td>
+                    <td><script>document.writeln(navigator.language);  </script></td>
+        </tr>
+         <tr>
+            <td>06</td>
+                <td>userAgent</td>
+                    <td><script>document.writeln(navigator.userAgent);  </script></td>
+        </tr>
+         <tr>
+            <td>07</td>
+                <td>platform</td>
+                    <td><script>document.writeln(navigator.platform);  </script></td>
+        </tr>
+         <tr>
+            <td>08</td>
+                <td>onLine</td>
+                    <td><script>document.writeln(navigator.onLine);  </script></td>
+        </tr>
+    </table>
+
+    </center>
+</body>
+
+
+</html>
