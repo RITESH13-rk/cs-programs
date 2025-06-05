@@ -1,0 +1,85 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+.container {
+width: 400px;
+height: 300px;
+border: 3px solid black;
+margin-top: 150px;
+background-color: salmon;
+}
+.label {
+text-align: left;
+font-size: 25px;
+margin-left: -20px;
+}
+
+input {
+padding: 8px;
+}
+.heading2 {
+margin-top: 20px;
+color:blue;
+}
+.button {
+	text-align: center;
+	padding: 10px;
+	border: 2px solid purple;
+	background: palegreen;
+	border-radius: 50px;
+	font-size: 20px;
+	width: 250px;
+}
+</style>
+<title>Document</title>
+</head>
+<body>
+<form action="save_emp_detail.php" method="post">
+<center>
+<div class="container">
+<h1 class="heading2" align="center"> Employee Detail </h1>
+<table>
+
+<tr><td>Employee Id: </td><td><input type="text" name="empid"><br></td></tr>
+<tr><td>Employee Name: </td><td><input type="text" name="empname"><br></td></tr>
+<tr><td>Designation: </td><td><input type="text" name="desig"><br></td></tr>
+<tr><td>Salary: </td><td><input type="text" name="salary"><br></td></tr>
+<tr><td colspan="2" align="center"><input type="submit" class="button" value="Store Employee Detail"></td></tr>
+</table>
+</div>
+</center>
+</form>
+</body>
+</html>
+
+
+
+
+<?php
+$conn = mysqli_connect('localhost', 'root', '', 'employee_db');
+
+if(!$conn) {
+echo "Connection unsucessful";
+} else {
+$emp_id = $_POST['empid'];
+$emp_name = $_POST['empname'];
+$emp_desig = $_POST['desig'];
+$salary = $_POST['salary'];
+
+$sql = "INSERT INTO emp_detail (emp_id,emp_name, emp_desig, salary)
+VALUES ('$emp_id','$emp_name', '$emp_desig', '$salary')";
+
+if ($conn->query($sql) === TRUE) {
+echo "<h1><center>New record created successfully</center></h1>";
+} else {
+echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+}
+?>
+
