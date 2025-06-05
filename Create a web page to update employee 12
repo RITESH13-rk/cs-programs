@@ -1,0 +1,73 @@
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style type="text/css">
+.container {
+width: 400px;
+height: 450px;
+border: 3px solid black;
+margin-top: 110px;
+background-color: green;
+}
+.label {
+text-align: left;
+font-size: 20px;
+margin-left: -20px;
+}
+
+input {
+padding: 10px;
+}
+.heading2 {
+margin-top: 20px;
+}
+</style>
+<title>Employee Information</title>
+</head>
+<body>
+<form action="employee_update.php" method="post">
+<center>
+<div class="container">
+<h2 class="heading2" align="center"> Student Information </h2>
+<table>
+<tr><td>Employee ID: </td><td><input type="text" name="empid"><br><br></td></tr>
+<tr><td>Employee Name: </td><td><input type="text" name="empname"><br><br></td></tr>
+<tr><td>Employee Designation: </td><td><input type="text" name="empdesig"><br><br></td></tr>
+<tr><td>Employee Salary: </td><td><input type="text" name="empsal"><br><br></td></tr>
+<tr><td colspan="2" align="center"><input type="submit"></td></tr>
+</table>
+</div>
+</center>
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+<?php
+$id = $_POST["empid"];
+$name = $_POST["empname"];
+$desig = $_POST["empdesig"];
+$salary = $_POST['empsal'];
+
+$conn = mysqli_connect("localhost", "root", "", "employee_db");
+
+if(!$conn) {
+die("Connection error ".mysqli_connect_error());
+}
+$sql = "UPDATE emp_detail SET emp_id = '$id', emp_name = '$name', emp_desig = '$desig', salary ='$salary' Where emp_id = '$id'";
+
+if(mysqli_query($conn, $sql)) {
+echo "<center><h1>Record Updated</h1></center>";
+} else {
+echo "<h1>".$conn->error."</h1>";
+}
+
+$conn->close();
+?>
