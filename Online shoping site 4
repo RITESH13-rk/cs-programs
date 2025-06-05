@@ -1,0 +1,43 @@
+<html>
+ <head> <title> Online Shopping Site </title>
+       <link rel="stylesheet" href="shop.css"/>
+  </head>
+  <body id="main">
+  <div id="head">
+     <table width=99%>
+	   <tr>
+	   <td> <img src="logo.jpg" width="80px" height="60px"/> </td>
+		<td> <h1> <i> Online shopping site </i> </h1>   </td>
+		 <td> Your Orders <img src="cart.jpg" width="30px" height="30px"/> </td>
+	  </tr></table>
+  </div>
+    <div id="menu">
+     <a href="Product.html">Product </a> &nbsp; | &nbsp; 
+	 <a href="order.html">Account </a>  &nbsp; | &nbsp; 
+	 <a href="login.html">Login </a>  
+  </div>
+   <div id="image">
+       <table width=99%>
+	   <tr>
+	     <td> <img src="offer1.jpg" width="100px" height="80px"/> </td>
+	     <td> <img src="offer2.jpg" width="100px" height="80px"/> </td>
+	     <td> <img src="offer3.jpg" width="100px" height="80px"/> </td>
+	   </tr></table>
+  </div>
+   <div id="product">
+       <table width=99%>
+	    <tr><td> <img src="p1.jpg" width="150px height="100px"/> <br>
+				  Product ID: 101 Price:500Rs</td> 
+             <td> <img src="p2.jpg" width="150px height="100px"/> <br>
+				  Product ID: 102 Price:600Rs</td> 
+			 <td> <img src="p3.jpg" width="150px height="100px"/> <br>
+				  Product ID: 103 Price:650Rs</td>   </tr>
+	    <tr><td> <img src="p1.jpg" width="150px height="100px"/> <br>
+				  Product ID: 104 Price:500Rs</td> 
+             <td> <img src="p2.jpg" width="150px height="100px"/> <br>
+				  Product ID: 105 Price:600Rs</td> 
+			 <td> <img src="p3.jpg" width="150px height="100px"/> <br>
+				  Product ID: 106 Price:650Rs</td>   </tr>  </table>
+  </div>
+  </body>
+</html>
