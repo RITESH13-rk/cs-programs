@@ -1,0 +1,55 @@
+Steps to Perform Linear Regression
+1. Import the packages and classes that you need.
+2. Provide data to work with, and eventually do appropriate
+transformations.
+3. Create a regression model and fit it with existing data.
+4. Check the results of model fitting to know whether the model is
+satisfactory.
+5. Apply the model for predictions.
+Step 1: Import packages and classes
+The first step is to import the package numpy and the class LinearRegression
+from sklearn.linear_model:
+import numpy as np
+from sklearn.linear_model import LinearRegression
+
+Step 2: Provide data
+The second step is defining data to work with. The inputs (regressors, x) and
+output (response, y) should be arrays or similar objects.
+x = np.array([5, 15, 25, 35, 45, 55]).reshape((-1, 1))
+y = np.array([5, 20, 14, 32, 22, 38])
+
+There are two arrays: the input, x, and the output, y. You should call
+.reshape() on x because this array must be two-dimensional, or more
+precisely, it must have one column and as many rows as necessary.
+Step 3: Create a model and fit it
+The next step is to create a linear regression model and fit it using the existing
+data.
+
+Create an instance of the class LinearRegression, which will represent the
+regression model:
+model = LinearRegression()
+Call .fit() on model:
+model.fit(x, y)
+Or
+Combine the two steps and call both in a single statement
+model = LinearRegression().fit(x, y)
+
+The attributes of model are .intercept_, which represents the coefficient b0,
+and .coef_, which represents b1:
+
+print(f"intercept: {model.intercept_}")
+print(f"slope: {model.coef_}")
+
+Step 5: Predict response
+Once you have a satisfactory model, then you can use it for predictions with
+either existing or new data. To obtain the predicted response, use .predict():
+y_pred = model.predict(x)
+print(f"predicted response:\n{y_pred}")
+
+In practice, regression models are often applied for forecasts. This means that
+you can use fitted models to calculate the outputs based on new inputs:
+
+x_new = np.arange(5).reshape((-1, 1))
+x_new
+y_new = model.predict(x_new)
+y_new
